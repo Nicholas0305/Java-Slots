@@ -6,8 +6,8 @@ Our project will be utilzing a json server file of our own fabrication, providin
 The user will be able to enter the amount of money they would like to submit into the slot application, and then press the activation button to test their luck. If the slots have three of the same image in a row, the user will win a sum of money, which will be added to their account.
 
 User Expectations/Deliverables:
-1. Enter amount of money to play with
-2. Press the activation button to run the slots application
+1. Press the activation button to run the slots application
+2. Stop each column of spinning objects, by clicking each individual button
 3. Recieve a sum of money if the user gets three of the same images in a row.
 
 Stretch Goals:
