@@ -12,7 +12,8 @@ User Expectations/Deliverables:
 
 Stretch Goals:
 1. Display a list of different jackpots
-2. 
+2. We'll offer set amounts of free money, but if they lose they can't play again
+3. Jackpot animation 
 
 
 
@@ -22,3 +23,4 @@ https://drive.google.com/file/d/1CYmpi_0DvZFnDAp4uFQuqRhn4wcZ_LcJ/view?usp=shari
 
 Trello Board:
 https://trello.com/b/xZlm4jYa/slot-machine-phase-1-project
+
