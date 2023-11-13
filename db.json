@@ -4,55 +4,55 @@
         "id": 1,
         "name": "Apple",
         "image": "./assets/ramen/shoyu.jpg",
-        "points": 30,
+        "points": 30
       },
       {
         "id": 2,
         "name": "Grape",
         "image": "./assets/ramen/naruto.jpg",
-        "points": 30,
+        "points": 30
       },
       {
         "id": 3,
         "name": "Bar",
         "image": "./assets/ramen/nirvana.jpg",
-        "points": 60,
+        "points": 60
       },
       {
         "id": 4,
         "name": "Seven",
         "image": "./assets/ramen/gyukotsu.jpg",
-        "points": 70,
+        "points": 70
       },
       {
         "id": 5,
         "name": "Money",
         "image": "./assets/ramen/kojiro.jpg",
-        "points": 100,
-      }
+        "points": 100
+      },
       {
         "id": 6,
         "name": "Cherries",
         "image": "./assets/ramen/kojiro.jpg",
-        "points": 30,
-      }
+        "points": 30
+      },
       {
         "id": 7,
         "name": "Diamond",
         "image": "./assets/ramen/kojiro.jpg",
-        "points": 200,
-      }
+        "points": 200
+      },
       {
         "id": 8,
         "name": "Orange",
         "image": "./assets/ramen/kojiro.jpg",
-        "points": 30,
-      }
+        "points": 30
+      },
       {
         "id": 9,
         "name": "Bell",
         "image": "./assets/ramen/kojiro.jpg",
-        "points": 70,
+        "points": 70
       }
     ]
   }
