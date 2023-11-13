@@ -12,15 +12,19 @@ User Expectations/Deliverables:
 
 Stretch Goals:
 1. Display a list of different jackpots
-2. We'll offer set amounts of free money, but if they lose they can't play again
-3. Jackpot animation 
+2. We'll offer set amounts of free money, but if they lose they can't play again for a period of time
+3. Jackpot animation plays when user wins
 
 
 
 
 Wireframe:
 https://drive.google.com/file/d/1CYmpi_0DvZFnDAp4uFQuqRhn4wcZ_LcJ/view?usp=sharing
+![Alt text](image-1.png)
+
+
 
 Trello Board:
 https://trello.com/b/xZlm4jYa/slot-machine-phase-1-project
+![Alt text](image.png)
 
