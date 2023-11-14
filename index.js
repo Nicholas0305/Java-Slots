@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const pointsDisplay = document.getElementById('points');
     const bankDisplay = document.getElementById('bank');
 
-    // Fetch and setup slot machine
-    let symbols = [];
+// Fetch and setup slot machine
+let symbols = [];
 
-    fetch("http://127.0.0.1:3000/symbols")
-        .then(response => response.json())
-        .then(fetchedSymbols => {
-            symbols = fetchedSymbols;
-            setupAndShuffleSlotMachine();
-        })
+fetch("http://127.0.0.1:3000/symbols")
+    .then(response => response.json())
+    .then(fetchedSymbols => {
+        spinReels()
+    })
+// Need a function
+function spinReels([...fetchedSymbols]) {
 
+}
 })
