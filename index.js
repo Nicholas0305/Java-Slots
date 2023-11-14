@@ -13,18 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((fetchedSymbols) => {
             fetchedSymbols.forEach((fetchedSymbols) => {
                 console.log(fetchedSymbols)
-                setUpSlots(fetchedSymbols)
+                //setUpSlots(fetchedSymbols)
             })
             let newSymbols = [...fetchedSymbols]
             console.log(newSymbols)
         })
     //takes in array of objects and sets them to list
-    function setUpSlots(fetchedSymbols) {
-        for (let i = 0; i < fetchedSymbols.length; i++) {
-            let img = reels.children[i]
-            img.src = fetchedSymbols.image
-        }
-    }
+    // function setUpSlots(fetchedSymbols) {
+    // for (let i = 0; i < fetchedSymbols.length; i++) {
+    //     let img = reelImg
+    //     img.src = fetchedSymbols.image
+    // }
+    //}
 
 
 
