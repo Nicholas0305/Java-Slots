@@ -1,9 +1,21 @@
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image:url(https://t4.ftcdn.net/jpg/02/67/11/29/240_F_267112986_Pm82f8DJQXtyETYqmZd2dnSicXiGKxYa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: auto;
+}
+@keyframes spin {
+    0% {transform: translateY(0); }
+    100% {transform: translateY(-100);}
+}
+.reel-spinning {
+    animation: spin ls infinite linear;
 }
 
 .slot {
@@ -33,6 +45,7 @@ body {
     border: 1px solid black;
     background-color: #f1f1f1; 
     border-radius: 10px;
+    min-height: 500px;
 }
 
 ul {
@@ -73,3 +86,4 @@ ul {
     background-color: #f1f1f1; 
     border-radius: 10px;
 }
+ 

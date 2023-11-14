@@ -18,3 +18,14 @@ function spinReels([...fetchedSymbols]) {
 
 }
 })
+
+function shuffleReels(reel) {
+    for (let i = reel.children.length; i >= 0; i--) {
+        const randomIndex = Math.floor(Math.random() * i);
+        reel.appendChild(reel.children[randomIndex]);
+    }
+}
+
+// Call this function for each slot machine
+const slotMachines = document.querySelectorAll('.slotMachine');
+slotMachines.forEach(slotMachine => shuffleReels(slotMachine.querySelector('.reels')));
