@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reelImg1 = document.getElementById('reelImg1')
     const reelImg2 = document.getElementById('reelImg2')
     const reelImg3 = document.getElementById('reelImg3')
+    const form = document.getElementById('inputBucks')
 
     //add money to bank balance
     let playerBank = 1000
@@ -17,7 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const costPerSpin = 50
     // update bank display
     function updateBankDisplay() {
+        form.addEventListener('submit', (e) => {
+            playerBank += parseInt(e.target.input.value)
+            e.preventDefault();
+            console.log('submission')
+            console.log(e.target.input.value)
+            bankDisplay.textContent = `JavaBucks: ${playerBank}`
+        })
+
+
         bankDisplay.textContent = `JavaBucks: ${playerBank}`
+
     }
     updateBankDisplay()
     // fetch array of objects
@@ -38,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stopButton2.disabled = false
                 stopButton3.disabled = false
                 spinReels(symbols)
-            }else {
+            } else {
                 alert("Insufficiient Funds")
             }
         })
