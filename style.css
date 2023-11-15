@@ -4,10 +4,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(https://t4.ftcdn.net/jpg/02/67/11/29/240_F_267112986_Pm82f8DJQXtyETYqmZd2dnSicXiGKxYa.jpg);
+    background-image: url(https://cdn.vectorstock.com/i/1000x1000/68/92/casino-poker-background-green-colors-seamless-vector-5846892.webp);
     background-size: cover;
     background-repeat: no-repeat;
     image-rendering: auto;
+    margin-top:80px;
+}
+header {
+    font-size: 25pt;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 5px;
+    color: rgba(186, 238, 193, 0.996);
 }
 
 @keyframes spin {
@@ -19,10 +32,16 @@ body {
         transform: translateY(-100);
     }
 }
-
-.reels-spinning {
+.reelsSpinning1 {
     animation: spin 1s infinite linear;
 }
+.reelsSpinning2 {
+    animation: spin 1s infinite linear;
+}
+.reelsSpinning3 {
+    animation: spin 1s infinite linear;
+}
+
 
 .slot {
     width: 80%;
@@ -35,12 +54,13 @@ body {
 }
 
 .slotMachine {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 480px;
     margin: 0 10px;
     border: 1px solid black;
     border-radius: 10px;
     overflow: hidden;
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -49,9 +69,35 @@ body {
     justify-content: space-around;
     align-items: center;
     border: 1px solid black;
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    background-color: goldenrod;
+    border-radius: 15px;
     min-height: 500px;
+}
+.start-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orangered;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    height: 80px;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 50;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20pt;
+    clip-path: polygon(
+        50% 50%,
+        90% 10,
+        80% 100%,
+        20% 100%
+    );
+}
+.start-button:active {
+    background-color: greenyellow;
+    box-shadow: 0 0 10px rgba(235, 235, 42, 0.7);
 }
 
 ul {
@@ -59,6 +105,11 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+#buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .reels {
@@ -73,22 +124,42 @@ ul {
     background-color: #f1f1f1;
 }
 
-#buttonContainer {
+.stop-button {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px;
-}
+    width: 70px;
+    height: 70px; 
+    border: 1px solid black;
+    border-radius: 50%; 
+    background-color: red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: 200;
 
-.button {
-    margin: 5px;
 }
-
+.stop-button:active {
+    background-color: gray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
 #pointsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    position: fixed;
+    bottom:0;
+    left:0;
+    width: 50%;
     border: 1px solid black;
     background-color: #f1f1f1;
     border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#bankContainer {
+    position: fixed;
+    bottom:0;
+    right:0;
+    width: 50%;
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
