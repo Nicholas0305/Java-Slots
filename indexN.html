@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phase 1 Project</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-
-<body>
-    <div id="slotMachineContainer">
+  </head>
+  
+  <body>
+    <header>
+      <h1>JavaSlots!</h1>
+    </header>
+    <br></br>
+    <main>
+      <div id= "buttonContainer">
+        <button id="startButton" type="button" class="start-button">Play NOW!</button>
+      </div>
+      <div id="slotMachineContainer">
         <div class="slotMachine">
-            <div class="reelsSpinning">
-                <ul class="reels">
-                    <li class="reel"><img id='reelImg1' src="./project_images/apple.jpeg" alt=""></li>
-
-                </ul>
-            </div>
+          <div class="reelsSpinning">
+            <ul class="reels">
+              <li class="reel"><img src="./project_images/apple.jpeg" alt=""></li>
+            </ul>
+          </div> 
         </div>
-        <div class="slotMachine">
-            <div class="reelsSpinning">
-                <ul class="reels">
-                    <li class="reel"><img id='reelImg2' src="./project_images/apple.jpeg" alt=""></li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="slotMachine">
-            <div class="reelsSpinning">
-                <ul class="reels">
-                    <li class="reel"><img id='reelImg3' src="./project_images/cherries.jpeg" alt=""></li>
-
-            </div>
-        </div>
-    </div>
-    <br><br />
     <div id="buttonContainer">
-        <button id="startButton" type="button" class="start-button">Start!</button>
-        <button id="stopButton1" type="button" class="stop-button" disabled="true">Stop!</button>
-        <button id="stopButton2" type="button" class="stop-button" disabled="true">Stop!</button>
-        <button id="stopButton3" type="button" class="stop-button" disabled="true">Stop!</button>
+      <button id="stopButton1" type="button" class="stop-button">STOP</button>
     </div>
-    <div id="pointsContainer">
-        <p id="points">[POINTS GO HERE]</p>
+      <div class="slotMachine">
+        <div class="reelsSpinning">
+          <ul class="reels">
+            <li class="reel"><img src="./project_images/money.jpeg" alt=""></li>
+          </ul>
+        </div>
+      </div>
+    <div id="buttonContainer">
+      <button id="stopButton2" type="button" class="stop-button">STOP</button>
     </div>
-    <div id="bankContainer">
-        <p id="bank">[BANK GOES HERE]</p>
+      <div class="slotMachine">
+        <div class="reelsSpinning">
+          <ul class="reels">
+            <li class="reel"><img src="./project_images/cherries.jpeg" alt=""></li>
+          </ul>
+        </div>
+      </div>
+      <div class="buttonContainer">
+        <button id="stopButton3" type="button" class="stop-button">STOP</button>
+      </div>
     </div>
-    <script defer type="text/javascript" src="indexN.js"></script>
-</body>
 
+</main>
+<div id="bankContainer">
+  <p id="bank">[BANK GOES HERE]</p>
+</div>
+<script defer type="text/javascript" src="index.js"></script>
+</body>
 </html>
