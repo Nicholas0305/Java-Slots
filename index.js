@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
             symbols = data
             buttons(symbols)
             jackPotList(symbols)
-            reactivatePlayButton(symbols)
         })
     let stoppedReels = 0
 
@@ -109,19 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100)
         }
     }
-    // if 3 fruits are the same, log You Win
-    function reactivatePlayButton(symbols) {
-        if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
-            console.log('You Win')
-            // grab name of image, find symbol in array
-            const matchedSymbolImg = reelImg1.src.split('/').pop()
-            const matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
-            if (matchedSymbol) {
-                // add points when symbols match
-                playerPoints += matchedSymbol.points
-                updatePointsDisplay()
-            }
+function awardMatchedImages() {
+    // checks if 3 reels match
+    if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
+        // need to take name of the image from the image
+        const matchedSymbolImg = reelImg1.src.split('/').pop()
+        let matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
+        // if 3 matching images found, add points
+        if (matchedSymbol) {
+            // add points based on matched symbol
+            playerPoints += matchedSymbol.points
+            // update what point container shows
+            updatePointsDisplay()
+            // add 10x javaBucks based on matched symbol 
+            const javaPrize = matchedSymbol.points * 10
+            playerBank += javaPrize
+            // update amount of javaBucks in container
+            updateBankDisplay()
+            alert(`Congratulations! You've won ${javaPrize} JavaBucks!`)
         }
+    }
         startButton.disabled = false
     }
 
