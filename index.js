@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const reelImg2 = document.getElementById('reelImg2')
     const reelImg3 = document.getElementById('reelImg3')
 
+    //add money to bank balance
+    let playerBank = 1000
+    // set cost of each spin
+    const costPerSpin = 50
+    // update bank display
+    function updateBankDisplay() {
+        bankDisplay.textContent = `JavaBucks: ${playerBank}`
+    }
+    updateBankDisplay()
     // fetch array of objects
     fetch("http://127.0.0.1:3000/symbols")
         .then(response => response.json())
@@ -20,11 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
     //Contains button functionality for start and stop
     function buttons(symbols) {
         startButton.addEventListener('click', () => {
-            startButton.disabled = true
-            stopButton1.disabled = false
-            stopButton2.disabled = false
-            stopButton3.disabled = false
-            spinReels(symbols)
+            // every time button is pressed, takes away money
+            if (playerBank >= costPerSpin) {
+                playerBank -= costPerSpin
+                updateBankDisplay()
+                startButton.disabled = true
+                stopButton1.disabled = false
+                stopButton2.disabled = false
+                stopButton3.disabled = false
+                spinReels(symbols)
+            }else {
+                alert("Insufficiient Funds")
+            }
         })
 
         stopButton1.addEventListener('click', () => {
