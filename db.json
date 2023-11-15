@@ -8,8 +8,8 @@
     },
     {
       "id": 2,
-      "name": "Grape",
-      "image": "./project_images/grape.jpeg",
+      "name": "Cherries",
+      "image": "./project_images/cherries.jpeg",
       "points": 30
     },
     {
@@ -29,30 +29,6 @@
       "name": "Money",
       "image": "./project_images/money.jpeg",
       "points": 100
-    },
-    {
-      "id": 6,
-      "name": "Cherries",
-      "image": "./project_images/cherries.jpeg",
-      "points": 30
-    },
-    {
-      "id": 7,
-      "name": "Diamond",
-      "image": "./project_images/diamond.jpeg",
-      "points": 200
-    },
-    {
-      "id": 8,
-      "name": "Orange",
-      "image": "./project_images/orange.jpeg",
-      "points": 30
-    },
-    {
-      "id": 9,
-      "name": "Bell",
-      "image": "./project_images/bell.jpeg",
-      "points": 70
     }
   ]
 }
