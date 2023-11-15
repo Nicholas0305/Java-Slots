@@ -11,7 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const reelImg2 = document.getElementById('reelImg2')
     const reelImg3 = document.getElementById('reelImg3')
     const form = document.getElementById('inputBucks')
-
+    // add player points
+    let playerPoints = 0
+    // render points
+    function updatePointsDisplay() {
+        pointsDisplay.textContent = `Points: ${playerPoints}`
+    }
     //add money to bank balance
     let playerBank = 1000
     // set cost of each spin
@@ -37,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(symbols => {
             buttons(symbols)
         })
+        let stoppedReels = 0
+
+        function checkReelsStopped() {
+            if (stoppedReels === 3) {
+                reactivatePlayButton()
+            }
+        }
     //Contains button functionality for start and stop
     function buttons(symbols) {
         startButton.addEventListener('click', () => {
@@ -56,75 +68,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         stopButton1.addEventListener('click', () => {
             stopButton1.disabled = true
+            checkReelsStopped()
         })
 
         stopButton2.addEventListener('click', () => {
             stopButton2.disabled = true
+            checkReelsStopped()
         })
 
         stopButton3.addEventListener('click', () => {
             stopButton3.disabled = true
+            checkReelsStopped()
         })
     }
 
-    function spinReels(symbols) {
-        let interval1 = setInterval(() => {
+    function spinReels(symbols) {        
+        spinReel(reelImg1, stopButton1)
+        spinReel(reelImg2, stopButton2)
+        spinReel(reelImg3, stopButton3)
 
-            reelImg1.src = symbols[Math.floor(Math.random() * symbols.length)].image
-            if (stopButton1.disabled) {
-                clearInterval(interval1);
-                const result1 = reelImg1.src
-                return result1
-            }
-        }, 100);
-
-        let interval2 = setInterval(() => {
-
-            reelImg2.src = symbols[Math.floor(Math.random() * symbols.length)].image
-            if (stopButton2.disabled) {
-                clearInterval(interval2);
-                const result2 = reelImg2.src
-                return result2
-            }
-        }, 100);
-
-        let interval3 = setInterval(() => {
-
-            reelImg3.src = symbols[Math.floor(Math.random() * symbols.length)].image
-            if (stopButton3.disabled) {
-                clearInterval(interval3);
-                const result3 = reelImg3.src
-                return result3
-            }
-        }, 100);
-        if (stopButton1.disabled === true && stopButton2.disabled === true && stopButton3.disabled === true) {
-            if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
-                console.log('You win')
-            }
-
+        function spinReel(reelImg, stopButton) {
+            let interval = setInterval(() => {
+                reelImg.src = symbols[Math.floor(Math.random() * symbols.length)].image
+                if (stopButton.disabled) {
+                    clearInterval(interval)
+                    stoppedReels++
+                    checkReelsStopped()
+                }
+            }, 100)
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+    function reactivatePlayButton() {
+        if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
+            console.log('You Win')
+            const matchedSymbolImg = reelImg1.src.split('/').pop()
+            const matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
+            if (matchedSymbol) {
+                playerPoints += matchedSymbol.points
+                updatePointsDisplay()
+            }
+        }
+        startButton.disabled = false
+    }
+    })
