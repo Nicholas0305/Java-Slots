@@ -177,3 +177,19 @@ ul {
     border-radius: 10px;
     font-family: 'Lucida Sans','Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
 }
+#pointsContainer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    right: 0;
+    width: 50%;
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#points {
+    font-size: 1.2em;
+    font-weight: bold;
+    color:black;
+}
