@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Contains button functionality for start and stop
     function buttons(symbols) {
         startButton.addEventListener('click', () => {
+            stoppedReels = 0
             // every time button is pressed, takes away money
             if (playerBank >= costPerSpin) {
                 playerBank -= costPerSpin
