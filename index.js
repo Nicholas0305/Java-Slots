@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     //Global Variables
     const reels = document.querySelectorAll('.reels');
+    //button that spins the reels
     const startButton = document.querySelector('.start-button');
+    //all 3 stop buttons to stop each individual slot
     const stopButton1 = document.getElementById('stopButton1');
     const stopButton2 = document.getElementById('stopButton2');
     const stopButton3 = document.getElementById('stopButton3');
+    //displays that show the user money/points earned
     const pointsDisplay = document.getElementById('points');
     const bankDisplay = document.getElementById('bank');
+    //reel images on list
     const reelImg1 = document.getElementById('reelImg1')
     const reelImg2 = document.getElementById('reelImg2')
     const reelImg3 = document.getElementById('reelImg3')
+    //grabs the form users can pay with money
     const form = document.getElementById('inputBucks')
+    const jackList = document.getElementById('jackList')
     // add player points
     let playerPoints = 0
     // render points
@@ -41,14 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(symbols => {
             buttons(symbols)
+            jackPotList(symbols)
         })
-        let stoppedReels = 0
+    let stoppedReels = 0
 
-        function checkReelsStopped() {
-            if (stoppedReels === 3) {
-                reactivatePlayButton()
-            }
+    function checkReelsStopped() {
+        if (stoppedReels === 3) {
+            reactivatePlayButton()
         }
+    }
     //Contains button functionality for start and stop
     function buttons(symbols) {
         startButton.addEventListener('click', () => {
@@ -83,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    function spinReels(symbols) {        
+    function spinReels(symbols) {
         spinReel(reelImg1, stopButton1)
         spinReel(reelImg2, stopButton2)
         spinReel(reelImg3, stopButton3)
@@ -96,11 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     stoppedReels++
                     checkReelsStopped()
                 }
-            }, 100)
+            }, 1000)
         }
     }
 
-    function reactivatePlayButton() {
+    function reactivatePlayButton(symbols) {
         if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
             console.log('You Win')
             const matchedSymbolImg = reelImg1.src.split('/').pop()
@@ -112,4 +119,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         startButton.disabled = false
     }
-    })
+
+
+    function jackPotList(symbols) {
+        symbols.forEach((symbols) => {
+            const li = document.createElement('li')
+            li.innerText = `${symbols.name}: ${symbols.points}`
+            jackList.appendChild(li)
+
+        })
+
+    }
+
+
+
+
+
+
+
+
+
+})
