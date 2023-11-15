@@ -106,13 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000)
         }
     }
-
+// if 3 fruits are the same, log You Win
     function reactivatePlayButton(symbols) {
         if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
             console.log('You Win')
+            // grab name of image, find symbol in array
             const matchedSymbolImg = reelImg1.src.split('/').pop()
             const matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
             if (matchedSymbol) {
+                // add points when symbols match
                 playerPoints += matchedSymbol.points
                 updatePointsDisplay()
             }
