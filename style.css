@@ -55,7 +55,7 @@ header {
 
 .slotMachine {
     width: 250px;
-    height: 480px;
+    height: 300px;
     margin: 0 10px;
     border: 1px solid black;
     border-radius: 10px;
@@ -71,7 +71,7 @@ header {
     border: 1px solid black;
     background-color: goldenrod;
     border-radius: 15px;
-    min-height: 500px;
+    min-height: 400px;
 }
 .start-button {
     display: flex;
