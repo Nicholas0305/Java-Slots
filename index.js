@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     //Global Variables
+    let symbols = []
     const reels = document.querySelectorAll('.reels');
     //button that spins the reels
     const startButton = document.querySelector('.start-button');
@@ -45,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // fetch array of objects
     fetch("http://127.0.0.1:3000/symbols")
         .then(response => response.json())
-        .then(symbols => {
+        .then(data => {
+            symbols = data
             buttons(symbols)
             jackPotList(symbols)
             reactivatePlayButton(symbols)
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkReelsStopped() {
         if (stoppedReels === 3) {
-            reactivatePlayButton()
+            awardMatchedImages()
         }
     }
     //Contains button functionality for start and stop
@@ -107,14 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100)
         }
     }
-
+    // if 3 fruits are the same, log You Win
     function reactivatePlayButton(symbols) {
         if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
-
             console.log('You Win')
+            // grab name of image, find symbol in array
             const matchedSymbolImg = reelImg1.src.split('/').pop()
             const matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
             if (matchedSymbol) {
+                // add points when symbols match
                 playerPoints += matchedSymbol.points
                 updatePointsDisplay()
             }
