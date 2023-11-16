@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // if 3 matching images found, add points
             if (matchedSymbol) {
                 // add points based on matched symbol
-                playerPoints += matchedSymbol.points
+                playerPoints += matchedSymbol.points;
                 // update what point container shows
                 updatePointsDisplay()
                 // add 10x javaBucks based on matched symbol 
@@ -134,9 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 // update amount of javaBucks in container
                 updateBankDisplay()
                 alert(`Congratulations! You've won ${javaPrize} JavaBucks!`)
+                
+                // show jackpot animation
+                const jackpotAnimation = document.getElementById('jackpotAnimation')
+                jackpotAnimation.style.display = 'block'
+                
+                // hide animation after 3 seconds
+                setTimeout(() => {
+                    jackpotAnimation.style.display = 'none'
+                }, 3000)
             }
+        } else {
+            // no animation if no jackpot
+            jackpotAnimation.style.display = 'none'
         }
-        startButton.disabled = false
+    
+        startButton.disabled = false;
     }
 
 
