@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stopButton3.disabled = false
                 spinReels(symbols)
             } else {
-                alert("Insufficiient Funds")
+                alert("Insufficient Funds")
             }
         })
 
