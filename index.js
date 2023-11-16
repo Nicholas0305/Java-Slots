@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('inputBucks')
     const jackList = document.getElementById('jackList')
     title.addEventListener('mouseover', (e) => {
-        title.innerText = '$SnackPack818'
+        title.innerText = 'Thanks for playing!'
         title.addEventListener('mouseleave', (e) => {
             title.innerText = 'JavaSlots!'
         })
