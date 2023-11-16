@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Global Variables
     let symbols = []
     const reels = document.querySelectorAll('.reels');
+    const title = document.getElementById('title')
     //button that spins the reels
     const startButton = document.querySelector('.start-button');
     //all 3 stop buttons to stop each individual slot
@@ -18,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //grabs the form users can pay with money
     const form = document.getElementById('inputBucks')
     const jackList = document.getElementById('jackList')
+    title.addEventListener('mouseover', (e) => {
+        title.innerText = '$SnackPack818'
+        title.addEventListener('mouseleave', (e) => {
+            title.innerText = 'JavaSlots!'
+        })
+    })
+
     // add player points
     let playerPoints = 0
     // render points
@@ -108,26 +116,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100)
         }
     }
-function awardMatchedImages() {
-    // checks if 3 reels match
-    if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
-        // need to take name of the image from the image
-        const matchedSymbolImg = reelImg1.src.split('/').pop()
-        let matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
-        // if 3 matching images found, add points
-        if (matchedSymbol) {
-            // add points based on matched symbol
-            playerPoints += matchedSymbol.points
-            // update what point container shows
-            updatePointsDisplay()
-            // add 10x javaBucks based on matched symbol 
-            const javaPrize = matchedSymbol.points * 10
-            playerBank += javaPrize
-            // update amount of javaBucks in container
-            updateBankDisplay()
-            alert(`Congratulations! You've won ${javaPrize} JavaBucks!`)
+    function awardMatchedImages() {
+        // checks if 3 reels match
+        if (reelImg1.src === reelImg2.src && reelImg2.src === reelImg3.src) {
+            // need to take name of the image from the image
+            const matchedSymbolImg = reelImg1.src.split('/').pop()
+            let matchedSymbol = symbols.find(symbol => symbol.image.includes(matchedSymbolImg))
+            // if 3 matching images found, add points
+            if (matchedSymbol) {
+                // add points based on matched symbol
+                playerPoints += matchedSymbol.points
+                // update what point container shows
+                updatePointsDisplay()
+                // add 10x javaBucks based on matched symbol 
+                const javaPrize = matchedSymbol.points * 10
+                playerBank += javaPrize
+                // update amount of javaBucks in container
+                updateBankDisplay()
+                alert(`Congratulations! You've won ${javaPrize} JavaBucks!`)
+            }
         }
-    }
         startButton.disabled = false
     }
 
