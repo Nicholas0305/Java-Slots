@@ -141,9 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function jackPotList(symbols) {
+        const jackList = document.getElementById('jackList')
         symbols.forEach((symbols) => {
             const li = document.createElement('li')
-            li.innerText = `${symbols.name}: ${symbols.points}`
+            li.innerText = `${symbols.name}: ${symbols.points} JavaPoints`
             jackList.appendChild(li)
 
         })
